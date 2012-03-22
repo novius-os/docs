@@ -8,8 +8,12 @@ html {
 }
 
 body {
+  margin: 1rem;
   font: 100%/1.5em sans-serif;
 } 
+body#no-margin {
+  margin: 0;
+}
 
 /* Typographic scale from http://thehappybit.com/2012/03/flexible-css-typographic-scale/ */
 h1, h2, h3, h4 {
@@ -17,9 +21,12 @@ h1, h2, h3, h4 {
 }
 h1 {  
   font-size: 3.4285714285714284em;  
-  line-height: 1.3125em;  
-  padding-left: 1rem;
+  line-height: 1.3125em; 
+  margin-bottom: 0.5rem;
 }    
+#no-margin h1 { 
+  margin: 1rem;
+}
 h2 {  
   font-size: 2.2857142857142856em;  
   line-height: 1.96875em;  
@@ -46,9 +53,29 @@ h1 a {
   color: #6EA4D4;
 }
 
+nav li {
+  float: left;
+  margin: 0 1rem 2rem;
+}
+nav a {
+  display: block;
+  text-decoration: none;
+  background: #DDD;
+  border-radius: 2px;
+  padding: 0.2em 0.5em;
+}
+nav a:hover {
+  color: white;
+  background: #CB2032;
+}
+
 table {
-  margin: 1rem 0 5rem;
+  margin-bottom: 5rem;
   width: 100%;
+}
+
+tr:hover {
+  background: #98C32F;
 }
 
 tr:first-child th {
@@ -66,6 +93,12 @@ th {
   text-align: left;
 }
 
+th a[href]{
+  text-transform: lowercase;
+  margin-left: 1rem;
+  font-size: 0.9em;
+}
+
 th:first-child {
   padding-left: 1rem !important;
 }
@@ -74,8 +107,8 @@ th:nth-child(2) {
   color: #DDD !important;
 }
 th:nth-child(2) a {
-  text-transform: lowercase;  
   color: #DDD;
+  margin: 0;
 }
 
 td {

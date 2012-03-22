@@ -14,28 +14,45 @@
   (function($) {
     $(function() {
       $("#hide-fr").click(function() {
-        $("th:nth-child(2), td:nth-child(2)").hide();
+        $("th:nth-child(2), td:nth-child(2)").animate({
+          opacity: 0
+        }, 300, function() {
+          $(this).hide();
+        });
       });
-		
+      
+      $("td a, nav a").click(function(event){		
+        event.preventDefault();          
+        var target = "a[name=" + $(this).attr("href").replace("#","") + "]";
+        $('html,body').animate({scrollTop:$(target).offset().top}, 300);        
+      });		
     });
   })(jQuery);
   </script>
 </head>
-<body>
+<body id="no-margin">
 
 <h1><a href="http://www.novius-os.org" target="_blank">Novius OS</a> Documentation - Glossary</h1>
+
+<nav>
+<ul>
+  <li><a href="#global">Global, OS-level</a></li>
+  <li><a href="#standard-ui">Applications, standard UI</a></li>
+  <li><a href="#developers">Developers only</a></li>  
+</ul>
+</nav>  
 
 <table>	
   <tr>
     <th>Term</th>
     <th>In French <a id="hide-fr" href="#">hide</a></th>
     <th>Thou Shall Not Say</th>
-    <th colspan="2">Comment, details</th>
+    <th colspan="2">Definition, comment</th>
   </tr>
   
   <!-- GLOBAL, OS LEVEL -->
   <tr>
-    <th colspan="5">Global, OS level</td>
+    <th colspan="5"><a name="global">Global, OS level</a> <a href="#top">^ top</a></td>
   </tr>
   <tr>
     <td>Application</td>
@@ -73,6 +90,13 @@
     <td>&nbsp;</td>
   </tr>
   <tr>
+    <td>Role</td>
+    <td>?</td>
+    <td>Group, User type</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
     <td>Tab</td>
     <td>Onglet</td>
     <td>&nbsp;</td>
@@ -90,7 +114,7 @@
     <td>Template</td>
     <td>Gabarit</td>
     <td>Theme</td>
-    <td>Theme is not used to avoid the confusion with jQuery.</td>
+    <td>'Theme' is not used to avoid the confusion with jQuery.</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -104,7 +128,7 @@
     <td>Close</td>
     <td>Fermer</td>
     <td>Quit, Exit</td>
-    <td>Applies to an application above all else</td>
+    <td>Applies primarily to an application.</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -115,10 +139,17 @@
     <td>&nbsp;</td>
   </tr>
   <tr>
+    <td>Notification bubble</td>
+    <td>Bulle de notification</td>
+    <td>Notification (alone), Growl, Badge, Pop-up, Alert</td>
+    <td>Success, error or info messages popping up in the top-right corner when saving, editing or deleting data.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
     <td>Notification badge</td>
     <td>Pastille de notification</td>
-    <td>Notification (alone), Bubble, Alert</td>
-    <td>&nbsp;</td>
+    <td>Notification (alone), Bubble, Number</td>
+    <td>Number attached to an application's icon.</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -136,10 +167,10 @@
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>Media centre</td>
+    <td><a name="media-centre">Media Centre</a></td>
     <td>M&eacute;diath&egrave;que</td>
     <td>Media library</td>
-    <td>&nbsp;</td>
+    <td>Novius OS uses British English, so no Media Center please.</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -160,17 +191,17 @@
   
   <!-- APPLICATIONS, STANDARD UI -->
   <tr>
-    <th colspan="5">Applications, standard UI</td>
+    <th colspan="5"><a name="standard-ui">Applications, standard UI</a> <a href="#top">^ top</a></td>
   </tr>
   <tr>
-    <td>Inspector</td>
+    <td><a name="inspector">Inspector</a></td>
     <td>Inspecteur</td>
     <td>Widget, Panel</td>
-    <td>Inspectors around the main grid of the mp3Grid</td>
+    <td>Inspectors around the main grid of the <a href="#app-desk">App Desk</a></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>Main grid</td>
+    <td><a name="main-grid">Main grid</a></td>
     <td>Tableau principal</td>
     <td>Table</td>
     <td>&nbsp;</td>
@@ -187,7 +218,7 @@
     <td>Thumbnails</td>
     <td>?</td>
     <td>Icons, Thumbs</td>
-    <td rowspan="3" style="vertical-align: middle;">Different types of <a href="#view">views</a></td>
+    <td rowspan="3" style="vertical-align: middle;">Different types of views</td>
     <td>There two thumbnails views: Large and small thumbnails</td>
   </tr>
   <tr>
@@ -204,7 +235,7 @@
   </tr>
   <tr>
     <td class="more-info" colspan="5">Consistency across applications helps users getting started with the software. This applies to texts, so please use the terms below for your application.<br />
-    Nevertheless, leave them aside whenever specific terms provide users with a better understanding of an application's workings. Just make sure the added value is worth the effort of learning a new UI/texts.</td>
+    Nevertheless, leave them aside whenever specific terms provide users with a better understanding of how an application works. Just make sure the added value is worth the effort of learning a new UI/texts.</td>
   </tr>
   <tr>
     <td>Add</td>
@@ -252,18 +283,25 @@
   
   <!-- DEVELOPERS -->
   <tr>
-    <th colspan="5">Developers</th>
+    <th colspan="5"><a name="developers">Developers only</a> <a href="#top">^ top</a></th>
   </tr>  
   <tr>
-    <td class="more-info" colspan="5">These terms are meant for developers only and won't be communicated to end users.</td>
+    <td class="more-info" colspan="5">These terms are meant for developers only and won't be communicated to end users. They are not to be translated either.</td>
   </tr>
   <tr>
     <td>App Engine</td>
     <td class="n-a">&nbsp;</td>
-    <td>App Maker, mp3Grid</td>
+    <td>App Maker</td>
     <td>The applications' common base</td>
     <td>&nbsp;</td>
   </tr>
+  <tr>
+    <td><a name="app-desk">App Desk</a></td>
+    <td class="n-a">&nbsp;</td>
+    <td>mp3Grid, mp3Table, App Home, App Grid</td>
+    <td>Standard UI for applications' home. It includes a <a href="#main-grid">main grid</a>, surrounded by <a href="#inspector">inspectors</a>. Inspired by music players (e.g. iTunes, Banshee), it was codenamed 'mp3Grid'.</td>
+    <td>&nbsp;</td>
+  </tr>  
   <tr>
     <td>Launcher</td>
     <td class="n-a">&nbsp;</td>
@@ -275,97 +313,92 @@
     <td>Enhancer</td>
     <td class="n-a">&nbsp;</td>
     <td>Add-on, Plug-in</td>
-    <td>Functions to be added to a WYSIWYG (listed under Applications in the toolbar)</td>
+    <td>Functions to be added to a WYSIWYG (listed under Applications in the toolbar). Standard enhancers do not provide URLs (e.g. contact form).</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <TD class="fuzzy">Connector</td>
+    <td>URL enhancer</td>
     <td class="n-a">&nbsp;</td>
-    <td>Sharing provider, Micro-data</td>
-    <td>Fuzzy</td>
     <td>&nbsp;</td>
-  </tr>
-  
+    <td>Specific type of enhancers which provide URLs (e.g. blog).</td>
+    <td>&nbsp;</td>
+  </tr> 
+  <tr>
+    <td>Sharer</td>
+    <td class="n-a">&nbsp;</td>
+    <td>Sharing provider, Connector, Micro-data</td>
+    <td>Allows data sharing between applications and to/from external services (e.g. social media)</td>
+    <td>&nbsp;</td>
+  </tr> 
+  <tr>
+    <td>Dispatcher</td>
+    <td class="n-a">&nbsp;</td>
+    <td>Connector</td>
+    <td>Receives an event from an application and transmit it to the applications which are meant to react.</td>
+    <td>&nbsp;</td>
+  </tr> 
+  <tr>
+    <td>Utility view</td>
+    <td class="n-a">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href="#view">View</a> unavaible to the end users but necessary for the application to run (e.g. <a href="#media-centre">Media Centre</a> in a modal window).</td>
+    <td>&nbsp;</td>
+  </tr> 
+  <tr>
+    <td>Locale</td>
+    <td class="n-a">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Language/country pair, e.g. en-gb (English, UK) or de-ch (German, Switzerland)</td>
+    <td>&nbsp;</td>
+  </tr> 
+  <tr>
+    <td>Observer</td>
+    <td class="n-a">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Comes from FuelPHP. Adds pre/post processing to insert, update, save or delete.</td>
+    <td>&nbsp;</td>
+  </tr> 
+  <tr>
+    <td>Behaviour</td>
+    <td class="n-a">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>A behaviour is an observer. In addition, it allows to add new functions to an object. E.g. translatable, publishable.</td>
+    <td>&nbsp;</td>
+  </tr> 
+  <tr>
+    <td>Tree grid</td>
+    <td class="n-a">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td rowspan="3" style="vertical-align: middle;">Layout widgets. Used for the <a href="view">views</a> of the <a href="main-grid">main grid</a>, for instance.</td>
+    <td>&nbsp;</td>
+  </tr> 
+  <tr>
+    <td>Thumbnails grid</td>
+    <td class="n-a">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr> 
+  <tr>
+    <td>List grid</td>
+    <td class="n-a">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr> 
+  <tr>
+    <td class="fuzzy">nos</td>
+    <td class="n-a">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Namespace and prefix for the core</td>
+    <td>&nbsp;</td>
+  </tr> 
+  <tr>
+    <td class="fuzzy">noviusos</td>
+    <td class="n-a">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Provider of Novius OS applications which are not part of the core</td>
+    <td>&nbsp;</td>
+  </tr>   
 </table>
-<!--		
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-		<tr>
-			<td><B>Messages en vrac pour mise au propre</B></td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>Please pick a file from your hard drive.</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>A file with the same name already exists.</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>This extension is not allowed due to security reasons.</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>No write permission. This is not your fault, but rather a misconfiguration from the server admin.  Tell her/him off!</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>File successfully added.</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>Please provide a title.</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>Sub-directory successfully created.</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-</TABLE>-->
 
 </body>
 </html>
