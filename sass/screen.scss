@@ -10,12 +10,15 @@
 // - Definitions
 // - Global
 // - Pages
+//    Home
 //    Glossary
+//    Applications
 
 
 // IMPORTS
 
 @import "compass/reset";
+@import "compass/css3";
 
 
 // DEFINITIONS
@@ -26,6 +29,8 @@
 }
 
 $special-font-stack: "League Gothic", sans-serif;
+$light-grey: #DDD;
+
 
 // GLOBAL
 
@@ -36,14 +41,6 @@ html {
 body {
   margin: 1rem;
   font: 100%/1.5em sans-serif;
-  
-  &#no-margin {
-    margin: 0;
-    
-    h1 { 
-      margin: 1rem;
-    }
-  }
 } 
 
 h1, h2, h3, h4 {
@@ -85,7 +82,9 @@ em {
   font-style: italic;
 }
 
-nav {
+nav {  
+  @extend p;
+  
   li {
     float: left;
     margin: 0 1rem 2rem;
@@ -93,7 +92,7 @@ nav {
   a {
     display: inline-block;
     text-decoration: none;
-    background: #DDD;
+    background: $light-grey;
     border-radius: 2px;
     padding: 0.2em 0.5em;    
     
@@ -105,7 +104,21 @@ nav {
 }
 
 // PAGES
-// - Glossary
+// Home
+
+#home {
+}
+
+
+// Glossary
+  
+#no-margin {
+  margin: 0;
+  
+  h1 { 
+    margin: 1rem;
+  }
+}
 
 table {
   margin-bottom: 5rem;
@@ -128,7 +141,7 @@ tr {
 th {
   font-size: 1.15em;
   text-transform: uppercase;
-  background: #DDD;
+  background: $light-grey;
   padding: 0.3em 0.5rem;
   text-align: left;
   
@@ -141,20 +154,22 @@ th {
   &:first-child {
     padding-left: 1rem !important;
   }  
-
+  
   &:nth-child(2) {
-    color: #DDD !important;
-    
     a {
-      color: #DDD;
+      color: white;
       margin: 0;
     }
+  }
+
+  &:nth-child(3) {
+    color: $light-grey !important;
   }
 }
 
 td {
   padding: 0.3em 0.5rem;
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid $light-grey;
 
   &:first-child {
     font-size: 1.15em;
@@ -165,12 +180,12 @@ td {
     padding-right: 1rem;
   }
 
-  &:nth-child(2) {
+  &:nth-child(3) {
     color: #777;
   }
 
   &.n-a {
-    background: #DDD;
+    background: $light-grey;
   }
 
   &.fuzzy {
@@ -178,8 +193,36 @@ td {
   }
 
   &.more-info {
-    border-top: 3px solid #DDD;
+    border-top: 3px solid $light-grey;
     font-size: 1em;
     font-style: italic;
+  }
+}
+
+
+// Applications
+
+#applications {
+  #details {
+    float: left;
+    margin-left: 2rem;
+    
+    div {
+      border-bottom: 1px solid $light-grey;
+      padding: 2rem 0;
+      @include box-sizing(padding-box);
+      
+      &#modularity {
+        height: 669px;
+      }
+      
+      &#sharing {
+        height: 744px;
+      }
+      
+      &:last-child {
+        border: none;
+      }
+    }
   }
 }

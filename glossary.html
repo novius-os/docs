@@ -16,11 +16,7 @@
   (function($) {
     $(function() {
       $("#hide-fr").click(function() {
-        $("th:nth-child(2), td:nth-child(2)").animate({
-          opacity: 0
-        }, 300, function() {
-          $(this).hide();
-        });
+        $("th:nth-child(2), td:nth-child(2)").fadeOut();
       });
       
       $("td a:not(.external), nav a").click(function(event){		
@@ -314,13 +310,13 @@
     <td class="n-a">&nbsp;</td>
     <td>Icon, Home tab icon, Home tab application</td>
     <td>Component of an application. Adds an icon to the <a href="#home-tab">home tab</a> which launches the application when clicked.</td>
-    <td rowspan="5" style="vertical-align: middle;">See the <a href="#" target="_blank" class="external">infograhic</a> dedicated to the applications in Novius OS for further details.</td>
+    <td rowspan="5" style="vertical-align: middle;">See the <a href="applications.html" class="external">infograhic</a> about to the applications for further details.</td>
   </tr>
   <tr>
     <td>Enhancer</td>
     <td class="n-a">&nbsp;</td>
     <td>Add-on, Plug-in</td>
-    <td>Component of an application to be added to a WYSIWYG (listed under Applications in the toolbar). Standard enhancers do not provide URLs (e.g. contact form).</td>
+    <td>Component of an application. Adds a function to a WYSIWYG (listed under Applications in the toolbar). Standard enhancers do not provide URLs (e.g. contact form).</td>
   </tr>
   <tr>
     <td>URL enhancer</td>

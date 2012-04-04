@@ -5,7 +5,7 @@
   Typographic scale: by The Happy Bit               | http://thehappybit.com/2012/03/flexible-css-typographic-scale/
 */
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+h1, h2, h3, h4, h5, h6, p, nav, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -73,12 +73,6 @@ body {
   margin: 1rem;
   font: 100%/1.5em sans-serif;
 }
-body#no-margin {
-  margin: 0;
-}
-body#no-margin h1 {
-  margin: 1rem;
-}
 
 h1, h2, h3, h4 {
   font-family: "League Gothic", sans-serif;
@@ -110,7 +104,7 @@ h4 {
   line-height: 2em;
 }
 
-p {
+p, nav {
   margin-bottom: 0.5em;
 }
 
@@ -129,13 +123,20 @@ nav li {
 nav a {
   display: inline-block;
   text-decoration: none;
-  background: #DDD;
+  background: #dddddd;
   border-radius: 2px;
   padding: 0.2em 0.5em;
 }
 nav a:hover {
   color: white;
   background: #CB2032;
+}
+
+#no-margin {
+  margin: 0;
+}
+#no-margin h1 {
+  margin: 1rem;
 }
 
 table {
@@ -156,7 +157,7 @@ tr:first-child th {
 th {
   font-size: 1.15em;
   text-transform: uppercase;
-  background: #DDD;
+  background: #dddddd;
   padding: 0.3em 0.5rem;
   text-align: left;
 }
@@ -168,17 +169,17 @@ th a {
 th:first-child {
   padding-left: 1rem !important;
 }
-th:nth-child(2) {
-  color: #DDD !important;
-}
 th:nth-child(2) a {
-  color: #DDD;
+  color: white;
   margin: 0;
+}
+th:nth-child(3) {
+  color: #dddddd !important;
 }
 
 td {
   padding: 0.3em 0.5rem;
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #dddddd;
 }
 td:first-child {
   font-size: 1.15em;
@@ -187,17 +188,39 @@ td:first-child {
 td:last-child {
   padding-right: 1rem;
 }
-td:nth-child(2) {
+td:nth-child(3) {
   color: #777;
 }
 td.n-a {
-  background: #DDD;
+  background: #dddddd;
 }
 td.fuzzy {
   background: #EE7C1C;
 }
 td.more-info {
-  border-top: 3px solid #DDD;
+  border-top: 3px solid #dddddd;
   font-size: 1em;
   font-style: italic;
+}
+
+#applications #details {
+  float: left;
+  margin-left: 2rem;
+}
+#applications #details div {
+  border-bottom: 1px solid #dddddd;
+  padding: 2rem 0;
+  -moz-box-sizing: padding-box;
+  -webkit-box-sizing: padding-box;
+  -ms-box-sizing: padding-box;
+  box-sizing: padding-box;
+}
+#applications #details div#modularity {
+  height: 669px;
+}
+#applications #details div#sharing {
+  height: 744px;
+}
+#applications #details div:last-child {
+  border: none;
 }
