@@ -21,10 +21,9 @@
         });
       });
       
-      $("td a, nav a").click(function(event){		
-        event.preventDefault();          
-        var target = "a[name=" + $(this).attr("href").replace("#","") + "]";
-        $('html,body').animate({scrollTop:$(target).offset().top}, 300);        
+      $("td a:not(.external), nav a").click(function(event){		
+        event.preventDefault();             
+        $('html,body').animate({scrollTop:$($(this).attr("href")).offset().top}, "slow");             
       });		
     });
   })(jQuery);
@@ -52,7 +51,7 @@
   
   <!-- GLOBAL, OS LEVEL -->
   <tr>
-    <th colspan="5"><a name="global">Global, OS level</a> <a href="#top">^ top</a></td>
+    <th colspan="5" id="global">Global, OS level</a> <a href="#top">^ top</a></td>
   </tr>
   <tr>
     <td>Application</td>
@@ -104,7 +103,7 @@
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>Home tab</td>
+    <td id="home-tab">Home tab</td>
     <td>Onglet d'accueil</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -121,7 +120,7 @@
     <td>Pin</td>
     <td>&Eacute;pingler</td>
     <td>Dock, Attach</td>
-    <td>Also unpin (<em>relâcher</em>) et pinned (<em>épinglé</em>)</td>
+    <td>Also unpin (<em>relâcher</em>) and pinned (<em>épinglé</em>)</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -167,7 +166,7 @@
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td><a name="media-centre">Media Centre</a></td>
+    <td id="media-centre">Media Centre</td>
     <td>M&eacute;diath&egrave;que</td>
     <td>Media library</td>
     <td>Novius OS uses British English, so no Media Center please.</td>
@@ -191,24 +190,23 @@
   
   <!-- APPLICATIONS, STANDARD UI -->
   <tr>
-    <th colspan="5"><a name="standard-ui">Applications, standard UI</a> <a href="#top">^ top</a></td>
+    <th colspan="5" id="standard-ui">Applications, standard UI</a> <a href="#top">^ top</td>
   </tr>
   <tr>
-    <td><a name="inspector">Inspector</a></td>
+    <td id="inspector">Inspector</td>
     <td>Inspecteur</td>
     <td>Widget, Panel</td>
-    <td>Inspectors around the main grid of the <a href="#app-desk">App Desk</a></td>
-    <td>&nbsp;</td>
+    <td>Inspectors around the main grid of the <a href="#app-desk">App Desk</td>
+    <td rowspan="2" style="vertical-align: middle;">See the <a href="http://www.youtube.com/watch?v=JskI5qWEsHw" target="_blank" class="external">screencast</a> dedicated to the App Desk for further details.</td>
   </tr>
   <tr>
-    <td><a name="main-grid">Main grid</a></td>
+    <td id="main-grid">Main grid</td>
     <td>Tableau principal</td>
     <td>Table</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
   </tr>
   <tr>
-    <td><a name="view">View</a></td>
+    <td id="view">View</td>
     <td>?</td>
     <td>Display, Layout</td>
     <td>Position of the inspectors and columns</td>
@@ -219,7 +217,7 @@
     <td>?</td>
     <td>Icons, Thumbs</td>
     <td rowspan="3" style="vertical-align: middle;">Different types of views</td>
-    <td>There two thumbnails views: Large and small thumbnails</td>
+    <td>There are two thumbnails views: Large and small thumbnails</td>
   </tr>
   <tr>
     <td>List</td>
@@ -269,7 +267,7 @@
     <td>Cancel</td>
     <td>Annuler</td>
     <td>Back, Discard</td>
-    <td>Data will be lost</td>
+    <td>Destructive action: data will be lost.</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -283,7 +281,7 @@
   
   <!-- DEVELOPERS -->
   <tr>
-    <th colspan="5"><a name="developers">Developers only</a> <a href="#top">^ top</a></th>
+    <th colspan="5" id="developers">Developers only</a> <a href="#top">^ top</a></th>
   </tr>  
   <tr>
     <td class="more-info" colspan="5">These terms are meant for developers only and won't be communicated to end users. They are not to be translated either.</td>
@@ -296,39 +294,42 @@
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td><a name="app-desk">App Desk</a></td>
+    <td id="app-desk">App Desk</td>
     <td class="n-a">&nbsp;</td>
     <td>mp3Grid, mp3Table, App Home, App Grid</td>
     <td>Standard UI for applications' home. It includes a <a href="#main-grid">main grid</a>, surrounded by <a href="#inspector">inspectors</a>. Inspired by music players (e.g. iTunes, Banshee), it was codenamed 'mp3Grid'.</td>
-    <td>&nbsp;</td>
+    <td>See the <a href="http://www.youtube.com/watch?v=JskI5qWEsHw" target="_blank" class="external">screencast</a> dedicated to the App Desk for further details.</td>
   </tr>  
   <tr>
     <td>Launcher</td>
     <td class="n-a">&nbsp;</td>
     <td>Icon, Home tab icon, Home tab application</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>Component of an application. Adds an icon to the <a href="#home-tab">home tab</a> which launches the application when clicked.</td>
+    <td rowspan="5" style="vertical-align: middle;">See the <a href="#" target="_blank" class="external">infograhic</a> dedicated to the applications in Novius OS for further details.</td>
   </tr>
   <tr>
     <td>Enhancer</td>
     <td class="n-a">&nbsp;</td>
     <td>Add-on, Plug-in</td>
-    <td>Functions to be added to a WYSIWYG (listed under Applications in the toolbar). Standard enhancers do not provide URLs (e.g. contact form).</td>
-    <td>&nbsp;</td>
+    <td>Component of an application to be added to a WYSIWYG (listed under Applications in the toolbar). Standard enhancers do not provide URLs (e.g. contact form).</td>
   </tr>
   <tr>
     <td>URL enhancer</td>
     <td class="n-a">&nbsp;</td>
     <td>&nbsp;</td>
     <td>Specific type of enhancers which provide URLs (e.g. blog).</td>
-    <td>&nbsp;</td>
   </tr> 
   <tr>
-    <td>Sharer</td>
+    <td>Shared data</td>
     <td class="n-a">&nbsp;</td>
-    <td>Sharing provider, Connector, Micro-data</td>
-    <td>Allows data sharing between applications and to/from external services (e.g. social media)</td>
-    <td>&nbsp;</td>
+    <td>Micro-data, Micro-format</td>
+    <td>Standardised data (e.g. name, URL, image) published by applications to be used in other applications with data catchers.</td>
+  </tr> 
+  <tr>
+    <td>Data catcher</td>
+    <td class="n-a">&nbsp;</td>
+    <td>Sharer, Sharing provider, Connector, Micro-data</td>
+    <td>Component of an application. It catches shared data to make use of it (e.g. send a blog post in a newsletter).</td>
   </tr> 
   <tr>
     <td>Dispatcher</td>
@@ -369,7 +370,7 @@
     <td>Tree grid</td>
     <td class="n-a">&nbsp;</td>
     <td>&nbsp;</td>
-    <td rowspan="3" style="vertical-align: middle;">Layout widgets. Used for the <a href="view">views</a> of the <a href="main-grid">main grid</a>, for instance.</td>
+    <td rowspan="3" style="vertical-align: middle;">Layout widgets. Used for the <a href="#view">views</a> of the <a href="#main-grid">main grid</a>, for instance.</td>
     <td>&nbsp;</td>
   </tr> 
   <tr>
