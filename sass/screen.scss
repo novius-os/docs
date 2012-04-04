@@ -1,0 +1,185 @@
+/*
+  COLOPHON
+  CSS framework: Compass / SASS                     | http://compass-style.org
+  Type: League Gothic by M Rich and C Hadilaksono   | http://www.theleagueofmoveabletype.com/league-gothic
+  Typographic scale: by The Happy Bit               | http://thehappybit.com/2012/03/flexible-css-typographic-scale/
+*/  
+
+// TABLE OF CONTENTS
+// - Imports
+// - Definitions
+// - Global
+// - Pages
+//    Glossary
+
+
+// IMPORTS
+
+@import "compass/reset";
+
+
+// DEFINITIONS
+
+@font-face {
+  font-family: "League Gothic";
+  src: url('../league_gothic.otf') format("truetype");
+}
+
+$special-font-stack: "League Gothic", sans-serif;
+
+// GLOBAL
+
+html {
+  font-size: 14px;
+}
+
+body {
+  margin: 1rem;
+  font: 100%/1.5em sans-serif;
+  
+  &#no-margin {
+    margin: 0;
+    
+    h1 { 
+      margin: 1rem;
+    }
+  }
+} 
+
+h1, h2, h3, h4 {
+  font-family: $special-font-stack;
+}
+h1 {  
+  font-size: 3.4285714285714284em;  
+  line-height: 1.3125em; 
+  margin-bottom: 0.5rem;
+  
+  a {
+    text-decoration: none;
+    color: #6EA4D4;
+    font-size: 0.8em;
+  }
+}   
+h2 {  
+  font-size: 2.2857142857142856em;  
+  line-height: 1.96875em;  
+}    
+h3 {  
+  font-size: 1.7142857142857142em;  
+  line-height: 1.75em;  
+}    
+h4 {  
+  font-size: 1.5em;  
+  line-height: 2em;  
+}  
+
+p {
+  margin-bottom: 0.5em;
+}
+
+a {
+  color: black;
+}
+
+em {
+  font-style: italic;
+}
+
+nav {
+  li {
+    float: left;
+    margin: 0 1rem 2rem;
+  }
+  a {
+    display: inline-block;
+    text-decoration: none;
+    background: #DDD;
+    border-radius: 2px;
+    padding: 0.2em 0.5em;    
+    
+    &:hover {
+      color: white;
+      background: #CB2032;
+    }
+  }
+}
+
+// PAGES
+// - Glossary
+
+table {
+  margin-bottom: 5rem;
+  width: 100%;
+}
+
+tr {
+  &:hover {
+    background: #98C32F;
+  }
+
+  &:first-child th {
+    background: #222;
+    color: white;
+    padding: 0.5em 0.5rem;
+    font-weight: bold;
+  }
+}
+
+th {
+  font-size: 1.15em;
+  text-transform: uppercase;
+  background: #DDD;
+  padding: 0.3em 0.5rem;
+  text-align: left;
+  
+  a {
+    text-transform: lowercase;
+    margin-left: 1rem;
+    font-size: 0.9em;
+  }
+
+  &:first-child {
+    padding-left: 1rem !important;
+  }  
+
+  &:nth-child(2) {
+    color: #DDD !important;
+    
+    a {
+      color: #DDD;
+      margin: 0;
+    }
+  }
+}
+
+td {
+  padding: 0.3em 0.5rem;
+  border-bottom: 1px solid #DDD;
+
+  &:first-child {
+    font-size: 1.15em;
+    padding-left: 1rem;
+  }
+
+  &:last-child {
+    padding-right: 1rem;
+  }
+
+  &:nth-child(2) {
+    color: #777;
+  }
+
+  &.n-a {
+    background: #DDD;
+  }
+
+  &.fuzzy {
+    background: #EE7C1C;
+  }
+
+  &.more-info {
+    border-top: 3px solid #DDD;
+    font-size: 1em;
+    font-style: italic;
+  }
+}
