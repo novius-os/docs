@@ -78,8 +78,16 @@ a {
   color: black;
 }
 
+strong {
+  font-weight: bold;
+}
+
 em {
   font-style: italic;
+}
+
+abbr {
+  border-bottom: 1px dotted black;
 }
 
 nav {  
@@ -203,9 +211,11 @@ td {
 // Applications
 
 #applications {
-  #details {
+  img {
     float: left;
-    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  #details {
     
     div {
       border-bottom: 1px solid $light-grey;

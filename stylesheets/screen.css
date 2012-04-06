@@ -112,8 +112,16 @@ a {
   color: black;
 }
 
+strong {
+  font-weight: bold;
+}
+
 em {
   font-style: italic;
+}
+
+abbr {
+  border-bottom: 1px dotted black;
 }
 
 nav li {
@@ -203,9 +211,9 @@ td.more-info {
   font-style: italic;
 }
 
-#applications #details {
+#applications img {
   float: left;
-  margin-left: 2rem;
+  margin-right: 2rem;
 }
 #applications #details div {
   border-bottom: 1px solid #dddddd;
