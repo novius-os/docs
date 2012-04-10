@@ -115,6 +115,13 @@ nav {
 // Home
 
 #home {
+  h1 {
+    background: url('../images/novius-os-logo.png') no-repeat;
+    @include box-sizing(border-box);
+    padding: 50px 0 0 200px;
+    height: 150px;
+    margin-bottom: 2rem;
+  }
 }
 
 
@@ -213,7 +220,7 @@ td {
 #applications {
   img {
     float: left;
-    margin-right: 2rem;
+    margin: 0 2rem 5rem 0;
   }
   #details {
     
