@@ -29,7 +29,7 @@
 </head>
 <body id="no-margin">
 
-<h1><a href="http://www.novius-os.org/en/developpers/Documentation.html">&laquo; Novius OS Documentation</a> - Glossary</h1>
+<h1><a href="http://github.com/novius-os/novius-os/wiki">&laquo; Novius OS Documentation</a> - Glossary</h1>
 
 <nav>
 <ul>
@@ -58,13 +58,13 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
-  <tr>
+  <!--<tr>
     <td>Applications market</td>
     <td>Applications market</td>
     <td>Store</td>
     <td>It is a common noun, not a brand.</td>
     <td>&nbsp;</td>
-  </tr>
+  </tr>-->
   <tr>
     <td>Applications manager</td>
     <td>Gestionnaire des applications</td>
@@ -103,36 +103,22 @@
   <tr>
     <td id="home-tab">Home tab</td>
     <td>Onglet d'accueil</td>
-    <td>&nbsp;</td>
+    <td>Desktop</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
+  <tr>
+    <td>System tray</td>
+    <td>Barre système</td>
+    <td>&nbsp;</td>
+    <td>Top-right corner of the tab bar used for OS-level actions</td>
+    <td>&nbsp;</td>
+  </tr> 
   <tr>
     <td>Template</td>
     <td>Gabarit</td>
     <td>Theme, Skin</td>
     <td>'Theme' is not used to avoid the confusion with jQuery.</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Pin</td>
-    <td>&Eacute;pingler</td>
-    <td>Dock, Attach</td>
-    <td>Also unpin (<em>relâcher</em>) and pinned (<em>épinglé</em>)</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Close</td>
-    <td>Fermer</td>
-    <td>Quit, Exit, Remove</td>
-    <td>Applies primarily to tabs.</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Refresh</td>
-    <td>Actualiser</td>
-    <td>Reload</td>
-    <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -142,13 +128,13 @@
     <td>Success, error or info messages popping up in the top-right corner when saving, editing or deleting data.</td>
     <td>&nbsp;</td>
   </tr>
-  <tr>
+  <!--<tr>
     <td>Notification badge</td>
     <td>Pastille de notification</td>
     <td>Notification (alone), Bubble, Number</td>
     <td>Number attached to an application's icon.</td>
     <td>&nbsp;</td>
-  </tr>
+  </tr>-->
   <tr>
     <td>Page</td>
     <td>Page</td>
@@ -157,17 +143,17 @@
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td class="fuzzy">Site</td>
-    <td>?</td>
-    <td>Root</td>
-    <td>To be decided, fuzzy</td>
+    <td id="context">Context</td>
+    <td>Contexte</td>
+    <td>Version</td>
+    <td>Novius OS is a multi-sites multi-languages CMS. In the same back-office, you manage several contexts, e.g. B2C / B2B sites, English / Spanish versions or even B2C (English, Spanish) / B2B (English only).</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td id="media-centre">Media Centre</td>
     <td>M&eacute;diath&egrave;que</td>
     <td>Media library</td>
-    <td>Novius OS uses British English, so no Media Center please.</td>
+    <td>Novius OS uses British English, so would you please be kind enough to restrain from using "Media Center".</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -191,11 +177,17 @@
     <th colspan="5" id="standard-ui">Applications, standard UI</a> <a href="#top">^ top</td>
   </tr>
   <tr>
+    <td id="app-desk">App Desk</td>
+    <td>App Desk</td>
+    <td>mp3Grid, mp3Table, App Home, App Grid</td>
+    <td>Standard UI for applications' home. It includes a main grid, surrounded by inspectors. Inspired by music players (e.g. iTunes, Banshee), it was codenamed 'mp3Grid'.</td>
+    <td rowspan="3" style="vertical-align: middle;">See the <a href="http://www.youtube.com/watch?v=JskI5qWEsHw" target="_blank" class="external">screencast</a> dedicated to the App Desk for further details.</td>
+  </tr> 
+  <tr>
     <td id="inspector">Inspector</td>
     <td>Inspecteur</td>
     <td>Widget, Panel</td>
-    <td>Inspectors around the main grid of the <a href="#app-desk">App Desk</td>
-    <td rowspan="2" style="vertical-align: middle;">See the <a href="http://www.youtube.com/watch?v=JskI5qWEsHw" target="_blank" class="external">screencast</a> dedicated to the App Desk for further details.</td>
+    <td>&nbsp;</td>
   </tr>
   <tr>
     <td id="main-grid">Main grid</td>
@@ -207,7 +199,7 @@
     <td id="view">View</td>
     <td>Vue</td>
     <td>Display, Layout</td>
-    <td>Position of the inspectors and columns</td>
+    <td>Saved position of the inspectors and columns</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -257,15 +249,43 @@
   <tr>
     <td>Save</td>
     <td>Enregistrer</td>
-    <td>OK, </td>
-    <td>Data submit</td>
+    <td>OK, Submit</td>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td>Cancel</td>
     <td>Annuler</td>
     <td>Back, Discard</td>
-    <td>Destructive action: data will be lost.</td>
+    <td>Destructive action: data may be lost.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Share</td>
+    <td>Partager</td>
+    <td>Send</td>
+    <td>&nbsp;</td>
+    <td>See the <a href="http://www.youtube.com/watch?v=sH3fbT76pxk" target="_blank" class="external">screencast</a> dedicated to content sharing for further details.</td>
+  </tr>
+  <tr>
+    <td>Translate</td>
+    <td>Traduire</td>
+    <td>Add in, Copy</td>
+    <td>When the content in available several languages, action of adding an existing item in another language.</td>
+    <td>&nbsp;</td>
+  </tr> 
+  <tr>
+    <td>Copy</td>
+    <td>Copier</td>
+    <td>Add in, Duplicate</td>
+    <td>When several sites are managed, action of adding an existing item to another site.</td>
+    <td>&nbsp;</td>
+  </tr> 
+  <tr>
+    <td>Close</td>
+    <td>Fermer</td>
+    <td>Quit, Exit, Remove</td>
+    <td>Applies to tabs and pop-up windows.</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -283,34 +303,13 @@
   </tr>  
   <tr>
     <td class="more-info" colspan="5">These terms are meant for developers only and won't be communicated to end users. They are not to be translated either.</td>
-  </tr>
-  <tr>
-    <td>App Engine</td>
-    <td class="n-a">&nbsp;</td>
-    <td>App Maker</td>
-    <td>The applications' common base</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td id="app-desk">App Desk</td>
-    <td class="n-a">&nbsp;</td>
-    <td>mp3Grid, mp3Table, App Home, App Grid</td>
-    <td>Standard UI for applications' home. It includes a <a href="#main-grid">main grid</a>, surrounded by <a href="#inspector">inspectors</a>. Inspired by music players (e.g. iTunes, Banshee), it was codenamed 'mp3Grid'.</td>
-    <td>See the <a href="http://www.youtube.com/watch?v=JskI5qWEsHw" target="_blank" class="external">screencast</a> dedicated to the App Desk for further details.</td>
-  </tr>  
-  <tr>
-    <td>Tray</td>
-    <td class="n-a">&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>Top-right corner of the tab bar used for OS tabs and actions</td>
-    <td>&nbsp;</td>
   </tr> 
   <tr>
     <td>Launcher</td>
     <td class="n-a">&nbsp;</td>
     <td>Icon, Home tab icon, Home tab application</td>
     <td>Component of an application. Adds an icon to the <a href="#home-tab">home tab</a> which launches the application when clicked.</td>
-    <td rowspan="5" style="vertical-align: middle;">See the <a href="applications.html" class="external">infographic</a> about to the applications for further details.</td>
+    <td rowspan="3" style="vertical-align: middle;">See the <a href="applications.html" class="external">infographic</a> about to the applications for further details.</td>
   </tr>
   <tr>
     <td>Enhancer</td>
@@ -325,17 +324,45 @@
     <td>Specific type of enhancers which provide URLs (e.g. blog).</td>
   </tr> 
   <tr>
+    <td>Item</td>
+    <td class="n-a">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Instance of an object.</td>
+    <td>&nbsp;</td>
+  </tr> 
+  <tr>
+    <td>Observer</td>
+    <td class="n-a">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Comes from FuelPHP. Adds pre/post processing to insert, update, save or delete.</td>
+    <td>&nbsp;</td>
+  </tr> 
+  <tr>
+    <td>Behaviour</td>
+    <td class="n-a">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>A behaviour is an observer. In addition, it allows to add new functions to an object. E.g. translatable, publishable.</td>
+    <td>&nbsp;</td>
+  </tr>  
+  <tr>
     <td id="sharable-data">Sharable data</td>
     <td class="n-a">&nbsp;</td>
-    <td>Micro-data, Micro-format, Shared data, Data Nuggets</td>
-    <td>Standardised data (e.g. name, URL, image) released by applications to be used in other applications with data catchers.</td>
+    <td>Micro-data, Micro-format, Shared data</td>
+    <td>Standardised data (e.g. title, URL, image) released by applications to be used in other applications with data catchers.</td>
+    <td rowspan="3" style="vertical-align: middle;">See the <a href="http://www.youtube.com/watch?v=sH3fbT76pxk" target="_blank" class="external">screencast</a> dedicated to content sharing for further details.</td>
+  </tr> 
+  <tr>
+    <td id="sharable-data">Content nugget</td>
+    <td class="n-a">&nbsp;</td>
+    <td>Data Nuggets, Content chunks</td>
+    <td>Inseparable group of sharable data, e.g. title, URL, image of a blog post.</td>
   </tr> 
   <tr>
     <td>Data catcher</td>
     <td class="n-a">&nbsp;</td>
     <td>Sharer, Sharing provider, Connector, Micro-data</td>
     <td>Component of an application. It catches sharable data to make use of it (e.g. send a blog post in a newsletter).</td>
-  </tr> 
+  </tr>
   <tr>
     <td>Dispatcher</td>
     <td class="n-a">&nbsp;</td>
@@ -353,22 +380,28 @@
   <tr>
     <td>Locale</td>
     <td class="n-a">&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>Language/country pair, e.g. en-gb (English, UK) or de-ch (German, Switzerland)</td>
-    <td>&nbsp;</td>
-  </tr> 
-  <tr>
-    <td>Observer</td>
-    <td class="n-a">&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>Comes from FuelPHP. Adds pre/post processing to insert, update, save or delete.</td>
+    <td>&nbsp;</td>    
+    <td rowspan="2">Several <a href="#context">contexts</a> can be managed in Novius OS. A context is either several sites / one locale, one site / several locales or several sites / several locales. A locale is a language/country pair, e.g. en-gb (English, UK) or de-ch (German, Switzerland).</td>
     <td>&nbsp;</td>
   </tr> 
   <tr>
-    <td>Behaviour</td>
+    <td>Site</td>
     <td class="n-a">&nbsp;</td>
     <td>&nbsp;</td>
-    <td>A behaviour is an observer. In addition, it allows to add new functions to an object. E.g. translatable, publishable.</td>
+    <td>&nbsp;</td>
+  </tr> 
+  <tr>
+    <td>Contextable</td>
+    <td class="n-a">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Behaviour: when applied to a class, the items belong to a context.</td>
+    <td>&nbsp;</td>
+  </tr> 
+  <tr>
+    <td>Twinnable</td>
+    <td class="n-a">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Behaviour: could named "contextable and twinnable". The items belong to a context and can have a twin in another context, e.g. English and Spanish versions of a same page.</td>
     <td>&nbsp;</td>
   </tr> 
   <tr>
