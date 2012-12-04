@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
   COLOPHON
   CSS framework: Compass / SASS                     | http://compass-style.org
@@ -70,7 +71,7 @@ html {
 }
 
 body {
-  margin: 1rem;
+  margin: 0rem;
   font: 100%/1.5em sans-serif;
 }
 
@@ -81,11 +82,11 @@ h1, h2, h3, h4 {
 h1 {
   font-size: 3.4285714285714284em;
   line-height: 1.3125em;
-  margin-bottom: 0.5rem;
+  margin: 0.5rem 1rem;
 }
 h1 a {
   text-decoration: none;
-  color: #6EA4D4;
+  color: #6ea4d4;
   font-size: 0.8em;
 }
 
@@ -124,6 +125,22 @@ abbr {
   border-bottom: 1px dotted black;
 }
 
+header {
+  background-color: #dddddd;
+  color: #222222;
+  padding: 0.3em 1em;
+  border-bottom: 1px solid #CCCCCC;
+  -moz-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
 nav li {
   float: left;
   margin: 0 1rem 2rem;
@@ -140,83 +157,83 @@ nav a:hover {
   background: #CB2032;
 }
 
-#home h1 {
-  background: url("../images/novius-os-logo.png") no-repeat;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 50px 0 0 200px;
-  height: 150px;
-  margin-bottom: 2rem;
+section {
+  margin: 0 1rem;
+  text-align: justify;
 }
-
-#no-margin {
-  margin: 0;
-}
-#no-margin h1 {
-  margin: 1rem;
+section ul {
+  list-style-type: square;
+  margin-left: 1em;
 }
 
 table {
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
   width: 100%;
 }
 
-tr:hover {
-  background: #98C32F;
-}
-tr:first-child th {
-  background: #222;
-  color: white;
-  padding: 0.5em 0.5rem;
-  font-weight: bold;
+tr:hover td {
+  background: #98C32F !important;
 }
 
 th {
-  font-size: 1.15em;
+  background: #222222;
+  color: white;
   text-transform: uppercase;
-  background: #dddddd;
-  padding: 0.3em 0.5rem;
-  text-align: left;
+  padding: 0.5em 0.5rem;
+  font-weight: bold;
+  border-bottom: 1px solid #dddddd;
 }
 th a {
   text-transform: lowercase;
   margin-left: 1rem;
   font-size: 0.9em;
 }
-th:first-child {
-  padding-left: 1rem !important;
-}
-th:nth-child(2) a {
-  color: white;
-  margin: 0;
-}
-th:nth-child(3) {
-  color: #dddddd !important;
-}
 
 td {
   padding: 0.3em 0.5rem;
   border-bottom: 1px solid #dddddd;
 }
-td:first-child {
+
+#glossary table {
+  margin-bottom: 5rem;
+}
+#glossary th {
+  font-size: 1.15em;
+}
+#glossary th:first-child {
+  padding-left: 1rem !important;
+}
+#glossary th:nth-child(2) a {
+  color: white;
+  margin: 0;
+}
+#glossary th:nth-child(3) {
+  color: #dddddd !important;
+}
+#glossary tr:not(:first-child) th {
+  background: #dddddd;
+  color: black;
+  font-weight: normal;
+  padding: 0.3em 0.5rem;
+  text-align: left;
+}
+#glossary td:first-child {
   font-size: 1.15em;
   padding-left: 1rem;
 }
-td:last-child {
+#glossary td:last-child {
   padding-right: 1rem;
 }
-td:nth-child(3) {
+#glossary td:nth-child(3) {
   color: #777;
 }
-td.n-a {
+#glossary td.n-a {
   background: #dddddd;
 }
-td.fuzzy {
+#glossary td.fuzzy {
   background: #EE7C1C;
 }
-td.more-info {
+#glossary td.more-info {
   border-top: 3px solid #dddddd;
   font-size: 1em;
   font-style: italic;
@@ -226,7 +243,7 @@ td.more-info {
   float: left;
   margin: 0 2rem 5rem 0;
 }
-#applications #details div {
+#applications #details article {
   border-bottom: 1px solid #dddddd;
   padding: 2rem 0;
   -moz-box-sizing: padding-box;
@@ -234,12 +251,30 @@ td.more-info {
   -ms-box-sizing: padding-box;
   box-sizing: padding-box;
 }
-#applications #details div#modularity {
+#applications #details article#modularity {
   height: 669px;
 }
-#applications #details div#sharing {
+#applications #details article#sharing {
   height: 744px;
 }
-#applications #details div:last-child {
+#applications #details article:last-child {
   border: none;
+}
+
+#styleguide section {
+  max-width: 1000px;
+}
+#styleguide h2 {
+  border-bottom: 5px solid #6ea4d4;
+  line-height: 1.5em;
+  margin: 1em 0 0.3em;
+}
+#styleguide td.copy {
+  background-color: #F5F5F5;
+}
+#styleguide td.copy:before {
+  content: "“";
+}
+#styleguide td.copy:after {
+  content: "”";
 }

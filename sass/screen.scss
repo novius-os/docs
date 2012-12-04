@@ -1,4 +1,4 @@
-/*
+﻿/*
   COLOPHON
   CSS framework: Compass / SASS                     | http://compass-style.org
   Type: League Gothic by M Rich and C Hadilaksono   | http://www.theleagueofmoveabletype.com/league-gothic
@@ -30,6 +30,8 @@
 
 $special-font-stack: "League Gothic", sans-serif;
 $light-grey: #DDD;
+$dark-grey: #222;
+$nos-blue: #6EA4D4;
 
 
 // GLOBAL
@@ -39,7 +41,7 @@ html {
 }
 
 body {
-  margin: 1rem;
+  margin: 0rem;
   font: 100%/1.5em sans-serif;
 } 
 
@@ -49,11 +51,11 @@ h1, h2, h3, h4 {
 h1 {  
   font-size: 3.4285714285714284em;  
   line-height: 1.3125em; 
-  margin-bottom: 0.5rem;
+  margin: 0.5rem 1rem;
   
   a {
     text-decoration: none;
-    color: #6EA4D4;
+    color: $nos-blue;
     font-size: 0.8em;
   }
 }   
@@ -89,14 +91,29 @@ em {
 abbr {
   border-bottom: 1px dotted black;
 }
+  
+header {
+  background-color: $light-grey;
+  color: $dark-grey;
+  padding: 0.3em 1em;
+  border-bottom: 1px solid #CCCCCC;
+  @include box-shadow(0 3px 5px rgba(0, 0, 0, 0.1));
+}
 
 nav {  
   @extend p;
+  
+  &:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
   
   li {
     float: left;
     margin: 0 1rem 2rem;
   }
+  
   a {
     display: inline-block;
     text-decoration: none;
@@ -111,109 +128,109 @@ nav {
   }
 }
 
-// PAGES
-// Home
-
-#home {
-  h1 {
-    background: url('../images/novius-os-logo.png') no-repeat;
-    @include box-sizing(border-box);
-    padding: 50px 0 0 200px;
-    height: 150px;
-    margin-bottom: 2rem;
+section {
+  margin: 0 1rem;
+  text-align: justify;
+  
+  ul {
+    list-style-type: square;
+    margin-left: 1em;
   }
 }
-
-
-// Glossary
   
-#no-margin {
-  margin: 0;
-  
-  h1 { 
-    margin: 1rem;
-  }
-}
-
 table {
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
   width: 100%;
 }
 
-tr {
-  &:hover {
-    background: #98C32F;
-  }
-
-  &:first-child th {
-    background: #222;
-    color: white;
-    padding: 0.5em 0.5rem;
-    font-weight: bold;
-  }
+tr:hover td {
+  background: #98C32F !important;
 }
 
 th {
-  font-size: 1.15em;
+  background: $dark-grey;
+  color: white;
   text-transform: uppercase;
-  background: $light-grey;
-  padding: 0.3em 0.5rem;
-  text-align: left;
+  padding: 0.5em 0.5rem;
+  font-weight: bold;
+  border-bottom: 1px solid $light-grey;
   
   a {
     text-transform: lowercase;
     margin-left: 1rem;
     font-size: 0.9em;
   }
-
-  &:first-child {
-    padding-left: 1rem !important;
-  }  
-  
-  &:nth-child(2) {
-    a {
-      color: white;
-      margin: 0;
-    }
-  }
-
-  &:nth-child(3) {
-    color: $light-grey !important;
-  }
 }
 
 td {
   padding: 0.3em 0.5rem;
   border-bottom: 1px solid $light-grey;
-
-  &:first-child {
-    font-size: 1.15em;
-    padding-left: 1rem;
-  }
-
-  &:last-child {
-    padding-right: 1rem;
-  }
-
-  &:nth-child(3) {
-    color: #777;
-  }
-
-  &.n-a {
-    background: $light-grey;
-  }
-
-  &.fuzzy {
-    background: #EE7C1C;
-  }
-
-  &.more-info {
-    border-top: 3px solid $light-grey;
-    font-size: 1em;
-    font-style: italic;
-  }
 }
 
+// PAGES
+// Glossary
+
+#glossary {  
+  table {
+    margin-bottom: 5rem;
+  }
+  
+  th {
+    font-size: 1.15em;
+
+    &:first-child {
+      padding-left: 1rem !important;
+    }  
+    
+    &:nth-child(2) {
+      a {
+        color: white;
+        margin: 0;
+      }
+    }
+
+    &:nth-child(3) {
+      color: $light-grey !important;
+    }
+  }
+  
+  tr:not(:first-child) th {
+    background: $light-grey;
+    color: black;
+    font-weight: normal;
+    padding: 0.3em 0.5rem;
+    text-align: left;
+  }
+  
+  td {
+    &:first-child {
+      font-size: 1.15em;
+      padding-left: 1rem;
+    }
+
+    &:last-child {
+      padding-right: 1rem;
+    }
+
+    &:nth-child(3) {
+      color: #777;
+    }
+
+    &.n-a {
+      background: $light-grey;
+    }
+
+    &.fuzzy {
+      background: #EE7C1C;
+    }
+
+    &.more-info {
+      border-top: 3px solid $light-grey;
+      font-size: 1em;
+      font-style: italic;
+    }
+  }
+}
 
 // Applications
 
@@ -224,7 +241,7 @@ td {
   }
   #details {
     
-    div {
+    article {
       border-bottom: 1px solid $light-grey;
       padding: 2rem 0;
       @include box-sizing(padding-box);
@@ -240,6 +257,30 @@ td {
       &:last-child {
         border: none;
       }
+    }
+  }
+}
+
+// Style guide
+#styleguide {
+  section {
+    max-width: 1000px;
+  }
+  
+  h2 {
+    border-bottom: 5px solid $nos-blue;
+    line-height: 1.5em;
+    margin: 1em 0 0.3em;
+  }
+  
+  td.copy {
+    background-color: #F5F5F5;
+
+    &:before {
+      content: "“";
+    }
+    &:after {
+      content: "”";
     }
   }
 }
