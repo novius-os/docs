@@ -167,6 +167,17 @@ td {
   border-bottom: 1px solid $light-grey;
 }
 
+.warning {
+  border: 1px solid #CD0A0A;
+  color: #CD0A0A;
+  padding: 0.3em 0.5em;
+  @include border-radius(2px);
+}
+
+a#back-home:before {
+  content: "‹ ";
+}
+
 // PAGES
 // Glossary
 
@@ -274,13 +285,21 @@ td {
   }
   
   td.copy {
-    background-color: #F5F5F5;
+    background-color: #EEE;
 
     &:before {
       content: "“";
     }
     &:after {
       content: "”";
+    }
+  }
+  #fr td.copy {
+    &:before {
+      content: "« ";
+    }
+    &:after {
+      content: " »";
     }
   }
 }

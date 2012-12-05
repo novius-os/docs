@@ -194,6 +194,22 @@ td {
   border-bottom: 1px solid #dddddd;
 }
 
+.warning {
+  border: 1px solid #CD0A0A;
+  color: #CD0A0A;
+  padding: 0.3em 0.5em;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -khtml-border-radius: 2px;
+  border-radius: 2px;
+}
+
+a#back-home:before {
+  content: "‹ ";
+}
+
 #glossary table {
   margin-bottom: 5rem;
 }
@@ -270,11 +286,17 @@ td {
   margin: 1em 0 0.3em;
 }
 #styleguide td.copy {
-  background-color: #F5F5F5;
+  background-color: #EEE;
 }
 #styleguide td.copy:before {
   content: "“";
 }
 #styleguide td.copy:after {
   content: "”";
+}
+#styleguide #fr td.copy:before {
+  content: "« ";
+}
+#styleguide #fr td.copy:after {
+  content: " »";
 }

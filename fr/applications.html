@@ -29,32 +29,40 @@
   </head>
   <body id="applications">
 
-    <h1><a href="index.html">&laquo; Documentation Novius OS</a> - Comprendre les applications</h1>
+    <header>Avec <a href="http://www.novius-os.org" target="_blank">Novius OS</a>, CMS Open Source, créez votre contenu une fois, publiez-le partout.</header>
+    <h1><a href="index.html" id="back-home">Documentation Novius OS</a> - Comprendre les applications</h1>
     
-    <nav><a href="#" id="hide-details">Cacher / montrer les précisions</a></nav>
-    <img src="../images/applications-infographic.jpg" alt="Comprendre les applications dans Novius OS" />
-    <div id="details">
-      <h2>Précisions</h2>
-      <div id="modularity">
-        <p>Ce schéma illustre ce que nous appelons &laquo;&nbsp;<strong>everything's an app</strong>&nbsp;&raquo;: à l'image de la programmation orientée objet, une application peut être étendue par d'autres applications afin d'être personnalisée ou pour ajouter des fonctionnalités supplémentaires.</p>
-        <p>L'application de base ("Forms" dans cet exemple) est limitée aux fonctions essentielles afin de maximiser son adoption. Les applications d'extension, comme "Captcha", peuvent également être populaires. Néanmoins, comme il s'agit d'applications séparées, les extensions n'empêchent pas les personnes à la recherche du strict minimum d'utiliser l'application de base.</p>
-        <p>Un tel système est un bon moyen de favoriser <strong>la mutualisation des développements</strong> plutôt que les <em>forks</em>.</p>
-        <p><a href="#sharing">Suivant &raquo;</a></p>
+    <nav>
+      <ul>
+        <li><a href="#" id="hide-details">Cacher / montrer les précisions</a></li>
+      </ul>
+    </nav>
+    
+    <section>
+      <img src="../images/applications-infographic.jpg" alt="Comprendre les applications dans Novius OS" />
+      <div id="details">
+        <h2>Précisions</h2>
+        <article id="modularity">
+          <p>Ce schéma illustre ce que nous appelons &laquo;&nbsp;<strong>everything's an app</strong>&nbsp;&raquo;: à l'image de la programmation orientée objet, une application peut être étendue par d'autres applications afin d'être personnalisée ou pour ajouter des fonctionnalités supplémentaires.</p>
+          <p>L'application de base ("Forms" dans cet exemple) est limitée aux fonctions essentielles afin de maximiser son adoption. Les applications d'extension, comme "Captcha", peuvent également être populaires. Néanmoins, comme il s'agit d'applications séparées, les extensions n'empêchent pas les personnes à la recherche du strict minimum d'utiliser l'application de base.</p>
+          <p>Un tel système est un bon moyen de favoriser <strong>la mutualisation des développements</strong> plutôt que les <em>forks</em>.</p>
+          <p><a href="#sharing">Suivant &raquo;</a></p>
+        </div>
+        <article id="sharing">
+          <p>Novius OS est <strong>un CMS bâti autour des données</strong>. Ainsi, l'un de ses rôles principales est de permettre la circulation des données entre les applications, mais aussi depuis / vers l'extérieur.</p>
+          <p>Des types standardisés de données sont définis, comme nom, URL ou image. On les appelle shared data. Chaque application précise les données qu'elle publie. L'application blog, par exemple, fournit un nom, une URL, une image et un texte pour chaque billet de blog.</p>
+          <p>Certaines applications sont capables d'exploiter ces shared data grâce à leur data catchers. Ces composants observent les shared data et agissent avec celles qui les concernent (ex : l'application Twitter a besoin d'un nom et d'une URL pour tweeter). Certains data catchers réagissent à une action de l'utilisateur, là où d'autres fonctionnent automatiquement.</p>
+          <p><a href="#components">Suivant &raquo;</a></p>
+        </div>
+        <article id="components">
+          <p>En plus des data catchers, trois autres composants existent.</p>
+          <p>Les <strong>launchers</strong> sont souvent la partie la plus visible d'une application. Ils ajoutent un icône à l'onglet d'accueil. Alors que certaines applications n'ont besoin d'aucun launcher (ex : captcha dont nous parlions plus tôt), d'autres en ont plusieurs. L'application newsletter, par exemple, pourrait avoir un launcher "Créer votre envoi" et un autre pour les statistiques.</p>
+          <p>Les <strong>templates</strong> sont similaires aux templates ou thèmes d'autres CMS. Ils fournissent une vue pour le front-office. De même, une application peut avoir 0, 1 ou <em>n</em> templates.</p>
+          <p>Les <strong>enhancers</strong> sont utilisés dans les éditeurs WYSIWYG. Ils fournissent des fonctionnalités pour le front-office, comme l'application Forms qui permet aux utilisateurs d'insérer des formulaires dans leurs pages web. Comme pour tous les composants, une application peut avoir 0, 1 ou <em>n</em> enhancers.<br />
+          Les <strong>URL enhancers</strong>, un type spécifique d'enhancers, gère leurs propres URL. Chaque billet de blog a son URL par exemple.</p>
+        </div>
       </div>
-      <div id="sharing">
-        <p>Novius OS est <strong>un CMS bâti autour des données</strong>. Ainsi, l'un de ses rôles principales est de permettre la circulation des données entre les applications, mais aussi depuis / vers l'extérieur.</p>
-        <p>Des types standardisés de données sont définis, comme nom, URL ou image. On les appelle shared data. Chaque application précise les données qu'elle publie. L'application blog, par exemple, fournit un nom, une URL, une image et un texte pour chaque billet de blog.</p>
-        <p>Certaines applications sont capables d'exploiter ces shared data grâce à leur data catchers. Ces composants observent les shared data et agissent avec celles qui les concernent (ex : l'application Twitter a besoin d'un nom et d'une URL pour tweeter). Certains data catchers réagissent à une action de l'utilisateur, là où d'autres fonctionnent automatiquement.</p>
-        <p><a href="#components">Suivant &raquo;</a></p>
-      </div>
-      <div id="components">
-        <p>En plus des data catchers, trois autres composants existent.</p>
-        <p>Les <strong>launchers</strong> sont souvent la partie la plus visible d'une application. Ils ajoutent un icône à l'onglet d'accueil. Alors que certaines applications n'ont besoin d'aucun launcher (ex : captcha dont nous parlions plus tôt), d'autres en ont plusieurs. L'application newsletter, par exemple, pourrait avoir un launcher "Créer votre envoi" et un autre pour les statistiques.</p>
-        <p>Les <strong>templates</strong> sont similaires aux templates ou thèmes d'autres CMS. Ils fournissent une vue pour le front-office. De même, une application peut avoir 0, 1 ou <em>n</em> templates.</p>
-        <p>Les <strong>enhancers</strong> sont utilisés dans les éditeurs WYSIWYG. Ils fournissent des fonctionnalités pour le front-office, comme l'application Forms qui permet aux utilisateurs d'insérer des formulaires dans leurs pages web. Comme pour tous les composants, une application peut avoir 0, 1 ou <em>n</em> enhancers.<br />
-        Les <strong>URL enhancers</strong>, un type spécifique d'enhancers, gère leurs propres URL. Chaque billet de blog a son URL par exemple.</p>
-      </div>
-    </div>
+    </section>
 
   </body>
 </html>
