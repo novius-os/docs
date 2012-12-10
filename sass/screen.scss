@@ -175,7 +175,7 @@ td {
 }
 
 a#back-home:before {
-  content: "‹ ";
+  content: "‹\0000a0";
 }
 
 // PAGES
@@ -296,10 +296,10 @@ a#back-home:before {
   }
   #fr td.copy {
     &:before {
-      content: "« ";
+      content: "«\0000a0";
     }
     &:after {
-      content: " »";
+      content: "\0000a0»";
     }
   }
 }

@@ -207,7 +207,7 @@ td {
 }
 
 a#back-home:before {
-  content: "‹ ";
+  content: "‹\0000a0";
 }
 
 #glossary table {
@@ -295,8 +295,8 @@ a#back-home:before {
   content: "”";
 }
 #styleguide #fr td.copy:before {
-  content: "« ";
+  content: "«\0000a0";
 }
 #styleguide #fr td.copy:after {
-  content: " »";
+  content: "\0000a0»";
 }
