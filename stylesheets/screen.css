@@ -289,10 +289,10 @@ a#back-home:before {
   background-color: #EEE;
 }
 #styleguide td.copy:before {
-  content: "“";
+  content: "‘";
 }
 #styleguide td.copy:after {
-  content: "”";
+  content: "’";
 }
 #styleguide #fr td.copy:before {
   content: "«\0000a0";

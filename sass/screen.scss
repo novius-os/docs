@@ -288,10 +288,10 @@ a#back-home:before {
     background-color: #EEE;
 
     &:before {
-      content: "“";
+      content: "‘";
     }
     &:after {
-      content: "”";
+      content: "’";
     }
   }
   #fr td.copy {
